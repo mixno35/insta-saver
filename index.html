@@ -45,7 +45,10 @@
 
 			var genURL = argument + "/?__a=1&__d=dis";
 
-			var newWin = window.open(genURL, 'Source', 'width=600,height=400');
+			var newWin = window.open(genURL, '_blank', 'width=600,height=400');
+			newWin.onload = function() {
+		        setTimeout(function() { console.log("Window opened!") }, 2000);
+		    } 
 
 			// alert(genURL);
 		}
