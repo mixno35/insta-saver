@@ -9,6 +9,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" type="text/css" href="style.css?v=2">
+	<script src="jquery/jquery-3.5.0.js"></script>
+	<script src="jquery/jquery.min.js"></script>
+	<script src="jquery/jquery-ui.min.js"></script>
 	<title>mixno35:: InstaSaver</title>
 </head>
 <body>
@@ -42,23 +45,7 @@
 
 			var genURL = argument + "/?__a=1&__d=dis";
 
-			// var newWin = window.open(genURL, 'Source', 'width=600,height=400');
-
-			var request = new XMLHttpRequest();
-		    request.open('GET', genURL, true);
-		    request.send("?__a=1&__d=dis");
-		    request.onreadystatechange = function () {
-		        if (request.readyState === 4 && request.status === 200) {
-		            var type = request.getResponseHeader('Content-Type');
-		            if (type.indexOf("text") !== 1) {
-		                console.log(request.responseText);
-		                // var jsonOBJ = JSON.parse(request.responseText);
-
-		            }
-		        } else {
-		        	alert('Нам не ўдалося загрузіць кантэнт, магчыма вы не ўвайшлі ў рахунак Instagram.');
-		        }
-		    }
+			var newWin = window.open(genURL, 'Source', 'width=600,height=400');
 
 			// alert(genURL);
 		}
