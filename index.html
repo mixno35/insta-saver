@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="by">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" type="text/css" href="style.css?v=2">
+	<title>mixno35:: InstaSaver</title>
+</head>
+<body>
+	<center>
+		<h1>InstaSaver</h1>
+		<h2>Захаваць фота з Instagram.</h2>
+
+		<input type="url" name="url_instagram" placeholder="Калі ласка, увядзіце спасылку на публікацыю Instagram..." id="url_inst">
+		<button class="btn" onclick="loadJSON(document.getElementById('url_inst').value)">
+			Прадоўжыць
+			<!-- <span class="material-symbols-outlined">chevron_right</span> -->		
+		</button>
+
+		<h3>Каб захаваць фота з Instagram, абавязкова ўвайдзіце ў свой рахунак Instagram праз гэты браўзэр.</h3>
+	</center>
+
+	<script type="text/javascript">
+		function checkURL(argument) {
+			if (argument.match(/^\s*(https|http)?:\/\/(www\.)?instagram\.com\/p\/[a-z\d-_]{1,255}\s*$/i)) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		function loadJSON(argument) {
+			if (!checkURL(argument)) {
+				alert("Спасылка павінна быць на публікацыю Instagram.");
+				return;
+			}
+
+			var genURL = argument + "/?__a=1&__d=dis";
+
+			// var newWin = window.open(genURL, 'Source', 'width=600,height=400');
+
+			var request = new XMLHttpRequest();
+		    request.open('GET', genURL, true);
+		    request.send("?__a=1&__d=dis");
+		    request.onreadystatechange = function () {
+		        if (request.readyState === 4 && request.status === 200) {
+		            var type = request.getResponseHeader('Content-Type');
+		            if (type.indexOf("text") !== 1) {
+		                console.log(request.responseText);
+		                // var jsonOBJ = JSON.parse(request.responseText);
+
+		            }
+		        } else {
+		        	alert('Нам не ўдалося загрузіць кантэнт, магчыма вы не ўвайшлі ў рахунак Instagram.');
+		        }
+		    }
+
+			// alert(genURL);
+		}
+	</script>
+</body>
+</html>
