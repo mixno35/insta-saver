@@ -44,7 +44,7 @@ body h2 {
 }
 body h3 {
 	padding: 10px 14px;
-	margin: 0 20px;
+	margin: 0 50px;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
 	width: fit-content;
@@ -57,6 +57,7 @@ body h3 {
 	margin-top: 20px;
 	background: #f0f0f0;
 	border: 1px solid lightgray;
+	max-width: 400px;
 }
 body input {
 	padding: 8px 12px;
@@ -96,4 +97,158 @@ body button.btn:active {
 	border-bottom: 1px solid white;
 	border-top: 1px solid gray;
 	padding-top: 9px;
+}
+
+body div#source-result {
+	padding: 0;
+	margin: 0;
+	width: -webkit-fill-available;
+}
+body div#source-result textarea {
+	padding: 8px 12px;
+	margin: 0px 50px;
+	max-width: 400px;
+	width: -webkit-fill-available;
+	margin-top: 40px;
+	border: 1px solid darkgray;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	font-size: 13px;
+	display: block;
+	min-height: 80px;
+}
+body div#source-result div button {
+	padding: 8px 12px;
+	margin: 0 10px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	cursor: pointer;
+	user-select: none;
+	outline: 1px solid gray;
+	border: none;
+	border-top: 1px solid white;
+	border-bottom: 1px solid gray;
+	height: 34px;
+	display: flex;
+	align-items: center;
+}
+body div#source-result div {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+body div#source-result div button span {
+	margin: 0;
+	padding: 0;
+	margin-left: 3px;
+}
+body div#source-result div button:active {
+	border-bottom: 1px solid white;
+	border-top: 1px solid gray;
+	padding-top: 9px;
+}
+
+body div#result-image {
+	padding: 0;
+	margin: 0;
+	margin-top: 40px;
+}
+body div#result-image h4 {
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	width: fit-content;
+	text-align: center;
+	font-size: 30px;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	pointer-events: none;
+	user-select: none;
+}
+body div#result-image div.container {
+	padding: 0;
+	margin: 0;
+	width: 330px;
+	margin-top: 40px;
+	background: white;
+	border: 1px solid lightgray;
+}
+body div#result-image div.container ol#images {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+body div#result-image div.container ol#images div.post {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid lightgray;
+	overflow: hidden;
+}
+body div#result-image div.container ol#images div.post img.post {
+	--size-image-width: 240px;
+	padding: 0;
+	margin: 0;
+	width: var(--size-image-width);
+	max-width: var(--size-image-width);
+	min-width: var(--size-image-width);
+	background: gray;
+}
+body div#result-image div.container ol#images div.post a.post {
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	width: fit-content;
+	text-align: center;
+	margin-top: 2px;
+	font-size: 13px;
+	color: black;
+	width: -webkit-fill-available;
+}
+body div#result-image div.container div.user {
+	padding: 10px;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid lightgray;
+}
+body div#result-image div.container div.user h6#username {
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	width: fit-content;
+	text-align: center;
+	margin-top: 2px;
+	font-size: 13px;
+	color: black;
+	pointer-events: none;
+	user-select: none;
+	width: -webkit-fill-available;
+	display: flex;
+	margin-left: 10px;
+}
+body div#result-image div.container div.user img#avatar {
+	--size-image-avatar: 36px;
+	padding: 0;
+	margin: 0;
+	width: var(--size-image-avatar);
+	max-width: var(--size-image-avatar);
+	min-width: var(--size-image-avatar);
+	height: var(--size-image-avatar);
+	max-height: var(--size-image-avatar);
+	min-height: var(--size-image-avatar);
+	background: lightgray;
+	border-radius: 100px;
+	overflow: hidden;
+	pointer-events: none;
+	user-select: none;
 }
